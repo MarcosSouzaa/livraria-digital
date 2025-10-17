@@ -14,7 +14,7 @@ const Header: React.FC = () => {
           href="/"
           className="text-2xl font-bold text-white hover:text-blue-200 transition duration-300"
         >
-          📖 Livraria Digital
+          📖 Educa Vitrine +
         </Link>
 
         {/* Ícone de Carrinho (será Client Component depois) */}

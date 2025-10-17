@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-100 mt-10 border-t border-gray-200">
       <div className="container mx-auto px-4 py-8 text-center text-gray-600">
         <p>
-          &copy; {new Date().getFullYear()} Livraria Digital. Todos os direitos
+          &copy; {new Date().getFullYear()} Educa Vitrine + . Todos os direitos
           reservados.
         </p>
         <p className="text-sm mt-1">
