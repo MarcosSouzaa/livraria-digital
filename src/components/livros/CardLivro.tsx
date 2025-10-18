@@ -1,7 +1,9 @@
+"use client"; // ESSENCIAL para usar o hook e o onClick!
+
 import React from "react";
 import Link from "next/link";
-
-import { Livro } from "@/lib/types"; // Importando a tipagem
+import { Livro } from "../../lib/types"; // Caminho relativo
+import { useCarrinho } from "../../context/CarrinhoContext"; // Caminho relativo (o arquivo que estava faltando)
 
 // 💡 Por que a interface está aqui? Para tipar o objeto que o componente recebe.
 interface CardLivroProps {

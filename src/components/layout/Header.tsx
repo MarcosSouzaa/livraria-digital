@@ -1,5 +1,3 @@
-// src/components/layout/Header.tsx
-
 import Link from "next/link";
 import ContadorCarrinho from "./ContadorCarrinho"; // <--- IMPORTAÇÃO NOVA!
 
