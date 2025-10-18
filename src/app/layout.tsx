@@ -1,14 +1,8 @@
-// src/app/layout.tsx
+import "./globals.css";
+import Layout from "@/components/layout/Layout";
+import { CarrinhoProvider } from "@/context/CarrinhoContext"; // <--- IMPORTAÇÃO NOVA!
 
-import "./globals.css"; // Mantenha a importação do CSS (onde o Tailwind está)
-import Layout from "@/components/layout/Layout"; // <--- USANDO O ALIAS @/ (muito mais limpo!)
-
-// Configurações de metadados da página (para SEO)
-export const metadata = {
-  title: "Educa Vitrine +",
-  description:
-    "Sua próxima leitura começa aqui. Desenvolvido com Next.js e React.",
-};
+// ... (Metadata)
 
 export default function RootLayout({
   children,
@@ -18,8 +12,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        {/* O Layout engloba a aplicação, injetando o Header e Footer */}
-        <Layout>{children}</Layout>
+        {/* 💡 POR QUE O PROVIDER VAI AQUI? */}
+        {/* Ele envolve TUDO, garantindo que qualquer componente no site (Header, Card) 
+           possa acessar o carrinho. */}
+        <CarrinhoProvider>
+          <Layout>{children}</Layout>
+        </CarrinhoProvider>
       </body>
     </html>
   );
