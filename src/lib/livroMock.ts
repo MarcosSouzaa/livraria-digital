@@ -1,5 +1,3 @@
-// src/lib/livroMock.ts
-
 import { Livro } from "./types";
 
 export const LIVROS_MOCK: Livro[] = [
@@ -40,7 +38,6 @@ export const LIVROS_MOCK: Livro[] = [
     descricao: "Por que fazemos o que fazemos na vida e nos negócios.",
   },
 ];
-
 // Função para simular a busca de todos os livros (Server-Side)
 export const buscarTodosLivros = (): Livro[] => {
   return LIVROS_MOCK;

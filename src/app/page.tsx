@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <section className="py-4">
-      <h1 className="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-3">
+      <h1 className="text-4xl font-extrabold text-white-900 mb-8 border-b pb-3">
         📚 Livros em Destaque
       </h1>
 

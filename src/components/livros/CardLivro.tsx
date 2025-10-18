@@ -1,13 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { Livro } from "@/lib/types"; // Importando a tipagem
 
 // 💡 Por que a interface está aqui? Para tipar o objeto que o componente recebe.
 interface CardLivroProps {
   livro: Livro;
 }
-
 const CardLivro: React.FC<CardLivroProps> = ({ livro }) => {
   // 💡 Por que não há 'use client'?
   // Este componente é puramente visual (renderiza dados estáticos)
@@ -26,12 +25,10 @@ const CardLivro: React.FC<CardLivroProps> = ({ livro }) => {
           Para otimizar e carregar as capas de forma eficiente e responsiva.
           Atenção: Se as imagens não aparecerem, precisaremos editar o 'next.config.js' (como fizemos no projeto anterior!)
         */}
-        <Image
-          src={livro.capaUrl}
-          alt={`Capa do livro ${livro.titulo}`}
-          fill
-          sizes="(max-width: 600px) 100vw, 33vw"
-          style={{ objectFit: "cover" }}
+        <img
+          src={livro.capaUrl} // src é obrigatório
+          alt={`Capa do livro ${livro.titulo}`} // alt é obrigatório
+          className="w-full h-full object-cover" // Classes do Tailwind são permitidas
         />
       </div>
 
@@ -65,5 +62,4 @@ const CardLivro: React.FC<CardLivroProps> = ({ livro }) => {
     </Link>
   );
 };
-
 export default CardLivro;
