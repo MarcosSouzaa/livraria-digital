@@ -1,24 +1,31 @@
-"use client"; // 💡 ESSENCIAL para usar o hook!
+// src/components/layout/ContadorCarrinho.tsx
+
+"use client";
 
 import React from "react";
-import { useCarrinho } from "@/context/CarrinhoContext";
-// Importe o Link aqui se quiser que o botão navegue. Por enquanto, não.
+import Link from "next/link"; // Importado para a navegação
+// Caminho relativo, o Contexto está em src/context/
+import { useCarrinho } from "../../context/CarrinhoContext";
 
 const ContadorCarrinho: React.FC = () => {
-  const { itens } = useCarrinho(); // Pega apenas a lista de itens do contexto
-
-  // 💡 CÁLCULO: Reduz a lista de itens para um único número (total de livros)
+  const { itens } = useCarrinho();
   const totalLivros = itens.reduce((acc, item) => acc + item.quantidade, 0);
 
   return (
-    <button className="relative text-white p-2 rounded-lg hover:bg-blue-700 transition duration-300">
-      <span className="text-xl">🛒</span>
-      {totalLivros > 0 && ( // 💡 Condicional: só mostra o número se for maior que zero
+    // 💡 O <Link> precisa do 'relative' para que o <span> flutue corretamente
+    <Link
+      href="/carrinho"
+      className="relative text-white p-2 rounded-lg hover:bg-blue-700 transition duration-300"
+    >
+      <span className="text-xl">Total do Carrinho 🛒</span>
+
+      {/* Apenas renderiza se houver itens */}
+      {totalLivros > 0 && (
         <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-xs text-white rounded-full h-5 w-5 flex items-center justify-center font-bold">
           {totalLivros}
         </span>
       )}
-    </button>
+    </Link>
   );
 };
 
