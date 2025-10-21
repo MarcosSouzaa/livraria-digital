@@ -1,5 +1,3 @@
-// src/app/api/livros/route.ts
-
 import { NextResponse } from "next/server";
 // Importa o client Promise que criamos em src/lib/db/mongodb.ts
 import clientPromise from "@/lib/db/mongodb";
